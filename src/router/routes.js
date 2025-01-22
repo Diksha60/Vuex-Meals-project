@@ -1,12 +1,13 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../pages/Home.vue";
-import MealList from "../pages/MealsByName.vue";
 import MealsByName from "../pages/MealsByName.vue";
 import MealsByLetter from "../pages/MealsByLetter.vue";
 import MealsByIngredient from "../pages/MealsByIngredient.vue";
 import DefaultLayout from "../components/DefaultLayout.vue";
 import LoginPage from "../pages/LoginPage.vue";
 import MealDetails from "../pages/MealDetails.vue";
+import Ingredients from "../pages/Ingredients.vue";
+import SignUpPage from "../pages/SignUpPage.vue";
 
 const routes = [
     {
@@ -24,8 +25,13 @@ const routes = [
                 component: MealsByName
             },
             {
+                name: 'ingredients',
+                path: '/ingredients',
+                component: Ingredients
+            },
+            {
                 name: 'byIngredient',
-                path: '/byIngredient/:ingredient?',
+                path: '/byIngredient/:ingredient',
                 component: MealsByIngredient
             },
             {
@@ -38,13 +44,18 @@ const routes = [
                 path: '/mealDetail/:id',
                 component: MealDetails
             },
+            {
+                name: 'signUp',
+                path: '/signUp',
+                component: SignUpPage
+            },
+            {
+                name: 'login',
+                path: '/login',
+                component: LoginPage
+            }
         ]
     },
-    {
-        name: 'login',
-        path: '/login',
-        component: LoginPage
-    }
 ]
 
 const router = createRouter({

@@ -1,8 +1,8 @@
 <template>
-    <div class="bg-gray-100 h-full">
+    <div class=" h-full">
         <Navbar/>
-        <main class="container mx-auto">
-            <router-view />
+        <main>
+            <router-view/>
         </main>
     </div>
     </template>

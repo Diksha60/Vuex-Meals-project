@@ -3,5 +3,8 @@
 // }
 
 export default {
-    searchedMeals: []
+    searchedMeals: [],
+    mealsByLetters: [],
+    mealsByIngredients: [],
+    user: [],
 }
