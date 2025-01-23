@@ -16,22 +16,24 @@
 
 <script setup>
 import { computed, onMounted, watch } from 'vue';
-import store from '../store/store';
+import { useStore } from 'vuex';
 import { useRoute } from 'vue-router';
 import Meals from '../components/Meals.vue';
 
+const store = useStore()
 const route = useRoute()
 const letterList = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
-const meals = computed(() => store.state.mealsByLetters)
+const meals = computed(() => store.state.meals.mealsByLetters)
 
 watch(route, () => {
-    store.dispatch('searchMealsByLetters', route.params.letter)
+    store.dispatch('meals/searchMealsByLetters', route.params.letter)
 })
 
 onMounted(() => {
-    store.dispatch('searchMealsByLetters', route.params.letter)
-})
-console.log('Current letter:', route.params);
+    const letter = route.params.letter || 'A'; // Default to 'A' if undefined
+    store.dispatch('meals/searchMealsByLetters', letter);
+});
+
 
 </script>

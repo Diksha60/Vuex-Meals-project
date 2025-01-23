@@ -6,5 +6,5 @@ export default {
     searchedMeals: [],
     mealsByLetters: [],
     mealsByIngredients: [],
-    user: [],
+    users: [],
 }

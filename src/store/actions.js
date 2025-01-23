@@ -20,9 +20,9 @@ export function searchMealsByIngredients({ commit }, ingredient) {
     })
 }
 
-export async function registerUser ({ commit }, user) {
-    const response = await axios.post('http://localhost:3000/user', user)
-    .then(({response}) => {
-        console.log(response)
+export function registerUser ({ commit }, user) {
+    axios.post('http://localhost:3000/user', user)
+    .then(({data}) => {
+        commit('setUsers', data.users)
     })
 }

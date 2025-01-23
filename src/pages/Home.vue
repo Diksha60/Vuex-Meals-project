@@ -20,4 +20,6 @@ onMounted(async () => {
       .then(({ data }) => meals.value.push(data.meals[0]));
   }
 })
+
+
 </script>

@@ -11,12 +11,22 @@ import SignUpPage from "../pages/SignUpPage.vue";
 
 const routes = [
     {
+        name: 'signUp',
+        path: '/signUp',
+        component: SignUpPage
+    },
+    {
+        name: 'login',
+        path: '/',
+        component: LoginPage
+    },
+    {
         path: '/',
         component: DefaultLayout,
         children: [
             {
                 name: 'home',
-                path: '',
+                path: '/home',
                 component: Home
             },
             {
@@ -44,16 +54,6 @@ const routes = [
                 path: '/mealDetail/:id',
                 component: MealDetails
             },
-            {
-                name: 'signUp',
-                path: '/signUp',
-                component: SignUpPage
-            },
-            {
-                name: 'login',
-                path: '/login',
-                component: LoginPage
-            }
         ]
     },
 ]
